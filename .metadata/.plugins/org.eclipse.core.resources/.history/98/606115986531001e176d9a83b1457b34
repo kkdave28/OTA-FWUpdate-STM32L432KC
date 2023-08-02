@@ -356,7 +356,10 @@ static void Delta_FW_Upgrade()
 	uint16_t offset = 0;
 	uint16_t chars_read = 0;
 	uint16_t delta_sz = 0;
+//uint8_t current_page = 255;
 	HAL_StatusTypeDef ret_code = HAL_OK;
+	//uint32_t current_address = 0;
+	//uint16_t chunk_sz = 0;
 	while(1)
 		{
 			UART_getc(&huart1, &c);
@@ -380,19 +383,7 @@ static void Delta_FW_Upgrade()
 				{
 					c = 'r';
 					UART_putc(&huart1, &c);
-					UART_getChunk(&huart1, transaction_buf, delta_sz);
-					uint8_t page_buffer [MAX_BLOCK_SZ];
-					uint32_t page_start_addr = FLASH_START + (start_page * MAX_BLOCK_SZ);
-					memcpy(page_buffer, page_start_addr, MAX_BLOCK_SZ);
-					uint16_t index = 0;
-					for(; index < delta_sz; index++)
-						page_buffer[index + offset] = transaction_buf[index];
-					ret_code = program_flash(page_buffer, MAX_BLOCK_SZ, start_page, 1, page_start_addr);
-					delta_sz = 0;
-
-
 				}
-				start_app();
 			}
 		}
 

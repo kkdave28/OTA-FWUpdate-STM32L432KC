@@ -8,9 +8,9 @@
 ../Core/Src/main.c:289:13:UART_getc	16	static
 ../Core/Src/main.c:293:13:UART_getChunk	32	static
 ../Core/Src/main.c:303:13:FW_Upgrade	40	static
-../Core/Src/main.c:352:13:Delta_FW_Upgrade	32	static
-../Core/Src/main.c:364:26:program_flash	48	static
-../Core/Src/main.c:415:13:flash_mass_erase	32	static
-../Core/Src/main.c:426:13:Error	8	static
-../Core/Src/main.c:435:13:start_app	16	static,ignoring_inline_asm
-../Core/Src/main.c:453:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/main.c:352:13:Delta_FW_Upgrade	2088	static
+../Core/Src/main.c:401:26:program_flash	48	static
+../Core/Src/main.c:452:13:flash_mass_erase	32	static
+../Core/Src/main.c:463:13:Error	8	static
+../Core/Src/main.c:472:13:start_app	16	static,ignoring_inline_asm
+../Core/Src/main.c:490:6:Error_Handler	4	static,ignoring_inline_asm
