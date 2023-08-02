@@ -1,0 +1,115 @@
+11:56:23 **** Incremental Build of configuration Debug for project OTA-Bootloader ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/etx_ota_update.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L432xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/etx_ota_update.d" -MT"Core/Src/etx_ota_update.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/etx_ota_update.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L432xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L432xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_hal_msp.d" -MT"Core/Src/stm32l4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L432xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
+../Core/Src/etx_ota_update.c: In function 'write_data_to_slot':
+../Core/Src/etx_ota_update.c:471:39: error: 'FLASH_TYPEERASE_SECTORS' undeclared (first use in this function); did you mean 'TYPEERASE_SECTORS'?
+  471 |       EraseInitStruct.TypeErase     = FLASH_TYPEERASE_SECTORS;
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                       TYPEERASE_SECTORS
+../Core/Src/etx_ota_update.c:471:39: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/etx_ota_update.c:474:24: error: 'FLASH_EraseInitTypeDef' has no member named 'Sector'
+  474 |         EraseInitStruct.Sector        = FLASH_SECTOR_7;
+      |                        ^
+../Core/Src/etx_ota_update.c:474:41: error: 'FLASH_SECTOR_7' undeclared (first use in this function)
+  474 |         EraseInitStruct.Sector        = FLASH_SECTOR_7;
+      |                                         ^~~~~~~~~~~~~~
+../Core/Src/etx_ota_update.c:478:24: error: 'FLASH_EraseInitTypeDef' has no member named 'Sector'
+  478 |         EraseInitStruct.Sector        = FLASH_SECTOR_9;
+      |                        ^
+../Core/Src/etx_ota_update.c:478:41: error: 'FLASH_SECTOR_9' undeclared (first use in this function)
+  478 |         EraseInitStruct.Sector        = FLASH_SECTOR_9;
+      |                                         ^~~~~~~~~~~~~~
+../Core/Src/etx_ota_update.c:480:22: error: 'FLASH_EraseInitTypeDef' has no member named 'NbSectors'
+  480 |       EraseInitStruct.NbSectors     = 2;                    //erase 2 sectors
+      |                      ^
+../Core/Src/etx_ota_update.c:481:22: error: 'FLASH_EraseInitTypeDef' has no member named 'VoltageRange'
+  481 |       EraseInitStruct.VoltageRange  = FLASH_VOLTAGE_RANGE_3;
+      |                      ^
+../Core/Src/etx_ota_update.c:481:39: error: 'FLASH_VOLTAGE_RANGE_3' undeclared (first use in this function); did you mean 'VOLTAGE_RANGE_3'?
+  481 |       EraseInitStruct.VoltageRange  = FLASH_VOLTAGE_RANGE_3;
+      |                                       ^~~~~~~~~~~~~~~~~~~~~
+      |                                       VOLTAGE_RANGE_3
+../Core/Src/etx_ota_update.c:503:32: error: 'FLASH_TYPEPROGRAM_BYTE' undeclared (first use in this function); did you mean 'FLASH_TYPEPROGRAM_FAST'?
+  503 |       ret = HAL_FLASH_Program( FLASH_TYPEPROGRAM_BYTE,
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+      |                                FLASH_TYPEPROGRAM_FAST
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:330,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/etx_ota_update.h:12,
+                 from ../Core/Src/etx_ota_update.c:9:
+../Core/Src/etx_ota_update.c: In function 'write_data_to_flash_app':
+../Core/Src/etx_ota_update.c:592:57: error: 'FLASH_FLAG_PGPERR' undeclared (first use in this function); did you mean 'FLASH_FLAG_PGSERR'?
+  592 |                 FLASH_FLAG_WRPERR | FLASH_FLAG_PGAERR | FLASH_FLAG_PGPERR);
+      |                                                         ^~~~~~~~~~~~~~~~~
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h:763:59: note: in definition of macro '__HAL_FLASH_CLEAR_FLAG'
+  763 | #define __HAL_FLASH_CLEAR_FLAG(__FLAG__)        do { if(((__FLAG__) & FLASH_FLAG_ECCR_ERRORS) != 0U) { SET_BIT(FLASH->ECCR, ((__FLAG__) & FLASH_FLAG_ECCR_ERRORS)); }\
+      |                                                           ^~~~~~~~
+../Core/Src/etx_ota_update.c:599:37: error: 'FLASH_TYPEERASE_SECTORS' undeclared (first use in this function); did you mean 'TYPEERASE_SECTORS'?
+  599 |     EraseInitStruct.TypeErase     = FLASH_TYPEERASE_SECTORS;
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                     TYPEERASE_SECTORS
+../Core/Src/etx_ota_update.c:600:20: error: 'FLASH_EraseInitTypeDef' has no member named 'Sector'
+  600 |     EraseInitStruct.Sector        = FLASH_SECTOR_5;
+      |                    ^
+../Core/Src/etx_ota_update.c:600:37: error: 'FLASH_SECTOR_5' undeclared (first use in this function)
+  600 |     EraseInitStruct.Sector        = FLASH_SECTOR_5;
+      |                                     ^~~~~~~~~~~~~~
+../Core/Src/etx_ota_update.c:601:20: error: 'FLASH_EraseInitTypeDef' has no member named 'NbSectors'
+  601 |     EraseInitStruct.NbSectors     = 2;                    //erase 2 sectors(5,6)
+      |                    ^
+../Core/Src/etx_ota_update.c:602:20: error: 'FLASH_EraseInitTypeDef' has no member named 'VoltageRange'
+  602 |     EraseInitStruct.VoltageRange  = FLASH_VOLTAGE_RANGE_3;
+      |                    ^
+../Core/Src/etx_ota_update.c:602:37: error: 'FLASH_VOLTAGE_RANGE_3' undeclared (first use in this function); did you mean 'VOLTAGE_RANGE_3'?
+  602 |     EraseInitStruct.VoltageRange  = FLASH_VOLTAGE_RANGE_3;
+      |                                     ^~~~~~~~~~~~~~~~~~~~~
+      |                                     VOLTAGE_RANGE_3
+../Core/Src/etx_ota_update.c:613:32: error: 'FLASH_TYPEPROGRAM_BYTE' undeclared (first use in this function); did you mean 'FLASH_TYPEPROGRAM_FAST'?
+  613 |       ret = HAL_FLASH_Program( FLASH_TYPEPROGRAM_BYTE,
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+      |                                FLASH_TYPEPROGRAM_FAST
+../Core/Src/etx_ota_update.c: In function 'write_cfg_to_flash':
+../Core/Src/etx_ota_update.c:956:37: error: 'FLASH_TYPEERASE_SECTORS' undeclared (first use in this function); did you mean 'TYPEERASE_SECTORS'?
+  956 |     EraseInitStruct.TypeErase     = FLASH_TYPEERASE_SECTORS;
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                     TYPEERASE_SECTORS
+../Core/Src/etx_ota_update.c:957:20: error: 'FLASH_EraseInitTypeDef' has no member named 'Sector'
+  957 |     EraseInitStruct.Sector        = FLASH_SECTOR_4;
+      |                    ^
+../Core/Src/etx_ota_update.c:957:37: error: 'FLASH_SECTOR_4' undeclared (first use in this function)
+  957 |     EraseInitStruct.Sector        = FLASH_SECTOR_4;
+      |                                     ^~~~~~~~~~~~~~
+../Core/Src/etx_ota_update.c:958:20: error: 'FLASH_EraseInitTypeDef' has no member named 'NbSectors'
+  958 |     EraseInitStruct.NbSectors     = 1;                    //erase only sector 4
+      |                    ^
+../Core/Src/etx_ota_update.c:959:20: error: 'FLASH_EraseInitTypeDef' has no member named 'VoltageRange'
+  959 |     EraseInitStruct.VoltageRange  = FLASH_VOLTAGE_RANGE_3;
+      |                    ^
+../Core/Src/etx_ota_update.c:959:37: error: 'FLASH_VOLTAGE_RANGE_3' undeclared (first use in this function); did you mean 'VOLTAGE_RANGE_3'?
+  959 |     EraseInitStruct.VoltageRange  = FLASH_VOLTAGE_RANGE_3;
+      |                                     ^~~~~~~~~~~~~~~~~~~~~
+      |                                     VOLTAGE_RANGE_3
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:330,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Inc/etx_ota_update.h:12,
+                 from ../Core/Src/etx_ota_update.c:9:
+../Core/Src/etx_ota_update.c:963:57: error: 'FLASH_FLAG_PGPERR' undeclared (first use in this function); did you mean 'FLASH_FLAG_PGSERR'?
+  963 |                 FLASH_FLAG_WRPERR | FLASH_FLAG_PGAERR | FLASH_FLAG_PGPERR);
+      |                                                         ^~~~~~~~~~~~~~~~~
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h:763:59: note: in definition of macro '__HAL_FLASH_CLEAR_FLAG'
+  763 | #define __HAL_FLASH_CLEAR_FLAG(__FLAG__)        do { if(((__FLAG__) & FLASH_FLAG_ECCR_ERRORS) != 0U) { SET_BIT(FLASH->ECCR, ((__FLAG__) & FLASH_FLAG_ECCR_ERRORS)); }\
+      |                                                           ^~~~~~~~
+../Core/Src/etx_ota_update.c:975:32: error: 'FLASH_TYPEPROGRAM_BYTE' undeclared (first use in this function); did you mean 'FLASH_TYPEPROGRAM_FAST'?
+  975 |       ret = HAL_FLASH_Program( FLASH_TYPEPROGRAM_BYTE,
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+      |                                FLASH_TYPEPROGRAM_FAST
+make: *** [Core/Src/subdir.mk:37: Core/Src/etx_ota_update.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+11:56:24 Build Failed. 26 errors, 0 warnings. (took 457ms)
+

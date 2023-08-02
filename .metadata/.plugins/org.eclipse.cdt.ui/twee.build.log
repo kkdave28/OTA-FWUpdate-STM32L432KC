@@ -1,0 +1,10 @@
+21:50:37 **** Incremental Build of configuration Debug for project twee ****
+make -j16 all 
+arm-none-eabi-size   twee.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5040	     20	   1572	   6632	   19e8	twee.elf
+Finished building: default.size.stdout
+ 
+
+21:50:37 Build Finished. 0 errors, 0 warnings. (took 243ms)
+

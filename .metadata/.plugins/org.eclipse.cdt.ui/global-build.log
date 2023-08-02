@@ -1,0 +1,88 @@
+14:48:13 **** Incremental Build of configuration Debug for project complex-example ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L432xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'calculator':
+../Core/Src/main.c:233:2: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  233 |  sprintf(buf, "%f + %f = %f\n", a,b, add(a,b));
+      |  ^~~~~~~
+../Core/Src/main.c:233:2: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:234:34: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  234 |  HAL_UART_Transmit(&huart1, buf, strlen(buf), 100);
+      |                                  ^~~~~~
+../Core/Src/main.c:234:34: warning: incompatible implicit declaration of built-in function 'strlen'
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+../Core/Src/main.c:234:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  234 |  HAL_UART_Transmit(&huart1, buf, strlen(buf), 100);
+      |                             ^~~
+      |                             |
+      |                             char *
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+ 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:238:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  238 |  HAL_UART_Transmit(&huart1, buf, strlen(buf), 100);
+      |                             ^~~
+      |                             |
+      |                             char *
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+ 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:242:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  242 |  HAL_UART_Transmit(&huart1, buf, strlen(buf), 100);
+      |                             ^~~
+      |                             |
+      |                             char *
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+ 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:246:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  246 |  HAL_UART_Transmit(&huart1, buf, strlen(buf), 100);
+      |                             ^~~
+      |                             |
+      |                             char *
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+ 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c:232:8: warning: unused variable 'ans' [-Wunused-variable]
+  232 |  float ans = 0;
+      |        ^~~
+arm-none-eabi-gcc -o "complex-example.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\GAMING\STM32CubeIDE\workspace_1.12.1\complex-example\STM32L432KCUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="complex-example.map" -Wl,--cref -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: complex-example.elf
+ 
+arm-none-eabi-size   complex-example.elf 
+arm-none-eabi-objdump -h -S  complex-example.elf  > "complex-example.list"
+arm-none-eabi-objcopy  -O ihex  complex-example.elf  "complex-example.hex"
+   text	   data	    bss	    dec	    hex	filename
+  28224	    484	   1852	  30560	   7760	complex-example.elf
+arm-none-eabi-objcopy  -O binary  complex-example.elf  "complex-example.bin"
+Finished building: default.size.stdout
+ 
+Finished building: complex-example.hex
+Finished building: complex-example.bin
+ 
+ 
+Finished building: complex-example.list
+ 

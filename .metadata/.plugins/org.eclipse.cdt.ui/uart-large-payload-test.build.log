@@ -1,0 +1,10 @@
+14:25:35 **** Incremental Build of configuration Debug for project uart-large-payload-test ****
+make -j16 all 
+arm-none-eabi-size   uart-large-payload-test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11516	     20	   1700	  13236	   33b4	uart-large-payload-test.elf
+Finished building: default.size.stdout
+ 
+
+14:25:35 Build Finished. 0 errors, 0 warnings. (took 207ms)
+

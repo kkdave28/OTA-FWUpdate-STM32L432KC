@@ -1,0 +1,12 @@
+main.c:73:5:main	1
+main.c:124:6:SystemClock_Config	4
+main.c:169:13:MX_USART1_UART_Init	2
+main.c:204:13:MX_GPIO_Init	1
+main.c:230:13:calculator	2
+main.c:250:14:add	1
+main.c:255:14:sub	1
+main.c:260:14:mul	1
+main.c:265:14:divide	1
+main.c:270:13:delay	2
+main.c:274:6:HAL_GPIO_EXTI_Callback	1
+main.c:284:6:Error_Handler	1

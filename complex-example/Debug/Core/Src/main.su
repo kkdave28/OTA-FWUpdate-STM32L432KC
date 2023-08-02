@@ -1,0 +1,12 @@
+../Core/Src/main.c:73:5:main	8	static
+../Core/Src/main.c:124:6:SystemClock_Config	96	static
+../Core/Src/main.c:169:13:MX_USART1_UART_Init	8	static
+../Core/Src/main.c:204:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:230:13:calculator	56	static
+../Core/Src/main.c:250:14:add	16	static,ignoring_inline_asm
+../Core/Src/main.c:255:14:sub	16	static,ignoring_inline_asm
+../Core/Src/main.c:260:14:mul	16	static,ignoring_inline_asm
+../Core/Src/main.c:265:14:divide	16	static
+../Core/Src/main.c:270:13:delay	16	static
+../Core/Src/main.c:274:6:HAL_GPIO_EXTI_Callback	16	static
+../Core/Src/main.c:284:6:Error_Handler	4	static,ignoring_inline_asm
