@@ -8,9 +8,9 @@ main.c:285:13:UART_putc	1
 main.c:289:13:UART_getc	1
 main.c:293:13:UART_getChunk	2
 main.c:303:13:FW_Upgrade	3
-main.c:352:13:Delta_FW_Upgrade	1
-main.c:364:26:program_flash	6
-main.c:415:13:flash_mass_erase	1
-main.c:426:13:Error	1
-main.c:435:13:start_app	2
-main.c:453:6:Error_Handler	1
+main.c:352:13:Delta_FW_Upgrade	6
+main.c:401:26:program_flash	6
+main.c:452:13:flash_mass_erase	1
+main.c:463:13:Error	1
+main.c:472:13:start_app	2
+main.c:490:6:Error_Handler	1

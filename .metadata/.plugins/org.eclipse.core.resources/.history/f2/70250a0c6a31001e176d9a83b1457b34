@@ -392,7 +392,6 @@ static void Delta_FW_Upgrade()
 
 
 				}
-				start_app();
 			}
 		}
 

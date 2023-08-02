@@ -356,7 +356,10 @@ static void Delta_FW_Upgrade()
 	uint16_t offset = 0;
 	uint16_t chars_read = 0;
 	uint16_t delta_sz = 0;
+//uint8_t current_page = 255;
 	HAL_StatusTypeDef ret_code = HAL_OK;
+	//uint32_t current_address = 0;
+	//uint16_t chunk_sz = 0;
 	while(1)
 		{
 			UART_getc(&huart1, &c);
@@ -392,7 +395,6 @@ static void Delta_FW_Upgrade()
 
 
 				}
-				start_app();
 			}
 		}
 
